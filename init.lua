@@ -23,12 +23,6 @@ function M.build_image()
   terminal.open(cmd, vim.fn.getcwd())
 end
 
---- Installs Docker via Homebrew
-function M.install_docker()
-  local cmd = "echo '=== Installing Docker via Homebrew... ===' && (brew install --cask docker || brew install colima docker)"
-  terminal.open(cmd, vim.fn.getcwd())
-end
-
 --- Plugin setup function
 function M.setup(opts)
   config.setup(opts)
@@ -45,10 +39,6 @@ function M.setup(opts)
   vim.api.nvim_create_user_command("AsmBuildImage", function()
     M.build_image()
   end, { desc = "Force rebuild rosetta-asm Docker image" })
-
-  vim.api.nvim_create_user_command("AsmInstallDocker", function()
-    M.install_docker()
-  end, { desc = "Install Docker runtime via Homebrew" })
 
   -- Register Keymaps if configured
   local keymaps = config.options.keymaps
