@@ -20,7 +20,7 @@ Note by me: initial plugin was made by Gemini. (as you can probably tell from th
 
 ```lua
 {
-  "your-username/rosetta-asm.nvim",
+  "mihdaja/rosetta-asm.nvim",
   ft = { "asm", "s", "S", "gas" },
   opts = {
     image_name = "rosetta-asm-env",
